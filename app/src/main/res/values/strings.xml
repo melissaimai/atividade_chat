@@ -8,4 +8,5 @@
     <string name="cadastro_sucesso">Cadastro realizado com sucesso</string>
     <string name="cadastro_falha">Erro no cadastro</string>
     <string name="login_falhou">Login falhou</string>
+    <string name="login_sucesso">login com sucesso</string>
 </resources>
