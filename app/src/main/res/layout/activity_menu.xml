@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MenuActivity">
+    android:layout_width="match_parent"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,60 +11,54 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="1dp"
-        android:background="#00FFFFFF"
+        android:background="@android:color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/noun_menu_1769489" />
 
-    <TextView
-        android:id="@+id/chatebatepapo"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/baloo"
-        android:isScrollContainer="false"
-        android:text="Chat e bate papo"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/qualseuinteresse"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/baloo"
-        android:text="Qual seu interesse?"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chatebatepapo" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/icone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/chatebatepapo"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            <TextView
+                android:id="@+id/chatebatepapo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/baloo"
+                android:text="Chat e bate papo"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/qualseuinteresse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/baloo"
+                android:text="Qual seu interesse?" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/icone" />
+    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="175dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        android:padding="10dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -74,30 +66,29 @@
             android:layout_margin="10dp"
             android:layout_weight="1">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="novidades">
-
-                <TextView
-                    android:id="@+id/novidadesText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/novidadesImage"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/aclonica"
-                    android:text="Novidades"
-                    android:textSize="24dp" />
+                android:gravity="center"
+                android:onClick="novidades"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/novidadesImage"
                     android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:src="@drawable/noun_lamp_3337705" />
-            </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/novidadesText"
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aclonica"
+                    android:text="Novidades"
+                    android:textSize="24sp" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -106,42 +97,38 @@
             android:layout_margin="10dp"
             android:layout_weight="1">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="cinema">
-
-                <TextView
-                    android:id="@+id/cinemaText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/cinemaImage"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/aclonica"
-                    android:text="Cinema"
-                    android:textSize="24dp" />
+                android:gravity="center"
+                android:onClick="novidades"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/cinemaImage"
                     android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:src="@drawable/noun_cinema_1536956" />
-            </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/cinemaText"
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aclonica"
+                    android:text="Cinema"
+                    android:textSize="24dp" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="175dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        android:padding="10dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -149,30 +136,29 @@
             android:layout_margin="10dp"
             android:layout_weight="1">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="tecnologia">
-
-                <TextView
-                    android:id="@+id/tecnologiaText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tecnologiaImage"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/aclonica"
-                    android:text="Tecnologia"
-                    android:textSize="24dp" />
+                android:gravity="center"
+                android:onClick="novidades"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/tecnologiaImage"
                     android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:src="@drawable/noun_technology_1667307" />
-            </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tecnologiaText"
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aclonica"
+                    android:text="Tecnologia"
+                    android:textSize="24dp" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -181,31 +167,29 @@
             android:layout_margin="10dp"
             android:layout_weight="1">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="economia">
-
-                <TextView
-                    android:id="@+id/economiaText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/economiaImage"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/aclonica"
-                    android:text="Economia"
-                    android:textSize="24dp" />
+                android:gravity="center"
+                android:onClick="novidades"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/economiaImage"
                     android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:src="@drawable/noun_economy_1753960" />
-            </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/economiaText"
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aclonica"
+                    android:text="Economia"
+                    android:textSize="24dp" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
